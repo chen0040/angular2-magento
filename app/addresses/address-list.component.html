@@ -1,0 +1,49 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        
+        <div *ngIf='page'>
+            <button class='btn btn-xs btn-primary' (click)='prevPage()'>Previous Page</button>        
+            {{ page.number}} / {{ page.totalPages }} ({{ page.totalElements }})
+            <button class='btn btn-xs btn-primary' (click)='nextPage()'>Next Page</button>
+
+            | Page Size: 
+            <button class='btn btn-xs btn-primary' (click)='setPageSize(10)'>10</button>
+            <button class='btn btn-xs btn-primary' (click)='setPageSize(20)'>20</button>
+            <button class='btn btn-xs btn-primary' (click)='setPageSize(50)'>50</button>
+            <button class='btn btn-xs btn-primary' (click)='setPageSize(100)'>100</button>
+        </div>
+        <div class='table-responsive'>
+            
+            <table class='table'
+                   *ngIf='page && page.numberOfElements'>
+                <thead>
+                    <tr>
+                        <th>Address ID</th>
+                        <th>Name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Valid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let address of page.content'>
+                        <td>
+                            <a [routerLink]="['/addresses', address.addressId]">
+                            {{address.addressId}}
+                            </a>
+                        </td>
+                        <td>
+                            {{ address.name}}
+                        </td>
+                        <td>{{ address.latitude }}</td>
+                        <td>{{ address.longitude }}</td>
+                        <td>{{ address.locationValid }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

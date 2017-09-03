@@ -1,0 +1,15 @@
+{
+  "totalPages": 1,
+  "totalElements": 1,
+  "number": 0,
+  "numberOfElements": 1,
+  "content": [
+    {
+      "addressId": "test123",
+      "name": "Customer 1",
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "locationValid": false
+    }
+  ]
+}

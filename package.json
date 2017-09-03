@@ -4,9 +4,9 @@
   "author": "Xianshun Chen",
   "description": "Package for visualizing Magento web",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server --c bs-firefox.json\" ",
+    "start": "tsc --noStrictGenericChecks && concurrently \"tsc --noStrictGenericChecks -w\" \"lite-server --c bs-firefox.json\" ",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
+    "tsc:w": "tsc --noStrictGenericChecks -w",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "lite:ff": "lite-server --c bs-firefox.json",
@@ -37,5 +37,8 @@
     "typescript": "^2.0.2",
     "typings": "^1.0.4"
   },
-  "repository": {}
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/chen0040/angular2-magento"
+  }
 }

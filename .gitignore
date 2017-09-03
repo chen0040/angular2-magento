@@ -8,6 +8,6 @@
 /build
 /captures
 .externalNativeBuild
-app/
-api/
+app/**/*.js
+app/**/*.js.map
 node_modules/
